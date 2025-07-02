@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { Navbar } from "../components/Navbar"
-import { ProductCard } from "../components/productCard"
+import { ProductCard } from "../components/ProductCard"
 import { Searchbar } from "../components/Searchbar"
 import { getAllFurnitures } from "../api/getFurnitures"
 import { useState } from "react"

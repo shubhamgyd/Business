@@ -2,7 +2,7 @@ import { getAllShoerack } from "../api/getShoerack"
 import { useEffect, useState } from "react"
 import { Navbar } from "../components/Navbar";
 import { Searchbar } from "../components/Searchbar";
-import { ProductCard } from "../components/productCard";
+import { ProductCard } from "../components/ProductCard";
 
 export const Shoerack = () => {
 
