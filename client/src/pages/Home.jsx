@@ -40,6 +40,9 @@ export const Home = () => {
             <div className="border w-fit p-2 text-lg font-medium text-white bg-blue-500">
                 <a><Link to="/acrylic-base"><div>Acrylic Base</div></Link></a>
             </div>
+            <div className="border w-fit p-2 text-lg font-medium text-white bg-blue-500">
+                <a><Link to="/doubleTop-base"><div>Double-Top Base</div></Link></a>
+            </div>
             </div>
             <div className="m-8 flex flex-wrap gap-x-4 gap-y-8">
             {

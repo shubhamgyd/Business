@@ -48,4 +48,10 @@ router.get("/acrylic-base", async (req, res) => {
     res.json(items);
 })
 
+router.get("/doubleTop-base", async (req, res) => {
+    const items = await Furniture.find({name: {
+        $regex: "double top base", $options: "i"}})
+    res.json(items);
+})
+
 module.exports = router;
