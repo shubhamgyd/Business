@@ -30,7 +30,7 @@ export const Home = () => {
             <div className="flex justify-center mt-20">
             <Searchbar />
             </div>
-            <div className="flex flex-wrap gap-x-4">
+            <div className="flex flex-wrap gap-x-4 mx-[2rem] my-[1rem]">
             <div className="border w-fit p-2 text-lg font-medium text-white bg-blue-500">
                 <a><Link to="/mandir"><div>Mandir</div></Link></a>
             </div>
@@ -42,6 +42,9 @@ export const Home = () => {
             </div>
             <div className="border w-fit p-2 text-lg font-medium text-white bg-blue-500">
                 <a><Link to="/doubleTop-base"><div>Double-Top Base</div></Link></a>
+            </div>
+            <div className="border w-fit p-2 text-lg font-medium text-white bg-blue-500">
+                <a><Link to="/doubleDoor-dressing"><div>Double Door Dressing</div></Link></a>
             </div>
             </div>
             <div className="m-8 flex flex-wrap gap-x-4 gap-y-8">

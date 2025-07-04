@@ -5,6 +5,7 @@ import { Mandir } from './pages/Mandir'
 import { Shoerack } from './pages/Shoerack'
 import { AcrylicBase } from './pages/AcrylicBase'
 import { DobuleTopBase } from './pages/DoubleTop'
+import { DoubleDoorDressing } from './pages/DoubleDoorDressing'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/shoerack" element={<Shoerack />}></Route>
         <Route path="/acrylic-base" element={<AcrylicBase />}></Route>
         <Route path="/doubleTop-base" element={<DobuleTopBase />}></Route>
+        <Route path="/doubleDoor-dressing" element={<DoubleDoorDressing />}></Route>
       </Routes>
     </>
   )
