@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BaseURL = "http://localhost:8080/furniture";
+const BaseURL = "https://ganesh-furniture-backend.onrender.com/furniture";
 
 export const getAllFurnitures = async () => {
     try {
