@@ -4,7 +4,9 @@ import { ProductCard } from "../components/ProductCard"
 import { Searchbar } from "../components/Searchbar"
 import { getAllFurnitures } from "../api/getFurnitures"
 import { useState } from "react"
-import { Link } from "react-router"
+import { Page } from "../components/Page"
+
+const Pages = ["mandir", "shoerack", "acrylic-base", "doubleTop-base", "doubleDoor-dressing"]
 
 export const Home = () => {
 
@@ -27,25 +29,12 @@ export const Home = () => {
     return (
         <>
             <Navbar />
-            <div className="flex justify-center mt-20">
+            <div className="flex justify-center mt-5 md:mt-10">
             <Searchbar />
             </div>
-            <div className="flex flex-wrap gap-x-4 mx-[2rem] my-[1rem]">
-            <div className="border w-fit p-2 text-lg font-medium text-white bg-blue-500">
-                <a><Link to="/mandir"><div>Mandir</div></Link></a>
-            </div>
-            <div className="border w-fit p-2 text-lg font-medium text-white bg-blue-500">
-                <a><Link to="/shoerack"><div>Shoe rack</div></Link></a>
-            </div>
-            <div className="border w-fit p-2 text-lg font-medium text-white bg-blue-500">
-                <a><Link to="/acrylic-base"><div>Acrylic Base</div></Link></a>
-            </div>
-            <div className="border w-fit p-2 text-lg font-medium text-white bg-blue-500">
-                <a><Link to="/doubleTop-base"><div>Double-Top Base</div></Link></a>
-            </div>
-            <div className="border w-fit p-2 text-lg font-medium text-white bg-blue-500">
-                <a><Link to="/doubleDoor-dressing"><div>Double Door Dressing</div></Link></a>
-            </div>
+            <div className="flex flex-wrap gap-x-2 gap-y-2 mx-[0.5rem] my-[0.5rem] md:mx-[2rem] md:my-[1.5rem]">
+            
+                {Pages.map((page) => (<Page page={page} />))}
             </div>
             <div className="m-8 flex flex-wrap gap-x-4 gap-y-8">
             {
