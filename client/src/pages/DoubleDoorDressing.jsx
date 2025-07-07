@@ -21,7 +21,6 @@ export const DoubleDoorDressing = () => {
             <>
                 <Navbar />
                 <div className="flex justify-center mt-20">
-                <Searchbar />
                 </div>
                 <div className="m-8 flex flex-wrap gap-x-4 gap-y-8">
                 {
