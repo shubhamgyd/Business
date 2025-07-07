@@ -50,7 +50,7 @@ router.get("/acrylic-base", async (req, res) => {
 
 router.get("/doubleTop-base", async (req, res) => {
     const items = await Furniture.find({name: {
-        $regex: "double top base", $options: "i"}})
+        $regex: "double top", $options: "i"}})
     res.json(items);
 })
 
