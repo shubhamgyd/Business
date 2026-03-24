@@ -11,16 +11,18 @@ const Pages = ["mandir", "shoerack", "acrylic-base", "doubleTop-base", "doubleDo
 export const Home = () => {
 
     const [furnitures, setFurnitures] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        const wakeServer = fetch("https://your-backend-url.onrender.com/all");
         const fetchFurnitures = async () => {
             try {
                 const temp = await getAllFurnitures();
                 setFurnitures(() => temp || []);
-                // console.log(temp)
-                console.log("furnitures", furnitures);
             } catch (err) {
                 console.error("Error Fetched", err);
+            } finally {
+                setLoading(false);
             }
         }
         fetchFurnitures();
@@ -37,8 +39,7 @@ export const Home = () => {
                 {Pages.map((page) => (<Page page={page} />))}
             </div>
             <div className="m-8 flex flex-wrap gap-x-4 gap-y-8">
-            {
-                furnitures.length > 0 && furnitures.map(({_id, name, imageUrl, size}) => (<ProductCard key={_id} name={name} imageUrl={imageUrl} size={size}/>))
+            {   loading ? <div>Please wait, our server was in sleep mode. Thankyou for your patience.</div> : furnitures.length > 0 && furnitures.map(({_id, name, imageUrl, size}) => (<ProductCard key={_id} name={name} imageUrl={imageUrl} size={size}/>))
             }
             </div>
         </>
