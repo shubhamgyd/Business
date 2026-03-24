@@ -5,6 +5,7 @@ import { Searchbar } from "../components/Searchbar"
 import { getAllFurnitures } from "../api/getFurnitures"
 import { useState } from "react"
 import { Page } from "../components/Page"
+import {MathGame} from "../components/MathGame";
 
 const Pages = ["mandir", "shoerack", "acrylic-base", "doubleTop-base", "doubleDoor-dressing"]
 
@@ -14,7 +15,7 @@ export const Home = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const wakeServer = fetch("https://your-backend-url.onrender.com/all");
+        const wakeServer = fetch("https://your-backend-url.onrender.com");
         const fetchFurnitures = async () => {
             try {
                 const temp = await getAllFurnitures();
@@ -39,7 +40,11 @@ export const Home = () => {
                 {Pages.map((page) => (<Page page={page} />))}
             </div>
             <div className="m-8 flex flex-wrap gap-x-4 gap-y-8">
-            {   loading ? <div>Please wait, our server was in sleep mode. Thankyou for your patience.</div> : furnitures.length > 0 && furnitures.map(({_id, name, imageUrl, size}) => (<ProductCard key={_id} name={name} imageUrl={imageUrl} size={size}/>))
+            {   loading ? <div className="mx-auto">
+                <div>Please wait, our server was in sleep mode. Thankyou for your patience.</div>
+                <div>Till that you can play this game.</div>
+                <MathGame />
+            </div> : furnitures.length > 0 && furnitures.map(({_id, name, imageUrl, size}) => (<ProductCard key={_id} name={name} imageUrl={imageUrl} size={size}/>))
             }
             </div>
         </>
