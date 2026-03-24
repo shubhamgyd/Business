@@ -1,5 +1,5 @@
 const express = require("express");
-const connectDB = require("./config");
+const connectDB = require("./config").default;
 const furnitureRoutes = require("./routes/furniture");
 const cors = require("cors");
 

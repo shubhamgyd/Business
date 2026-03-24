@@ -26,8 +26,12 @@ router.post("/add", upload.single("image"), async (req, res) => {
 })
 
 router.get("/all", async (req, res) => {
-    const items = await Furniture.find();
-    res.json(items);
+    try {
+        const items = await Furniture.find();
+        res.json(items);
+    } catch (err) {
+        res.status(500).json({message: "Failed to fetch items"})
+    }
 })
 
 router.get("/mandir", async (req, res) => {

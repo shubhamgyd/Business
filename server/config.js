@@ -1,7 +1,8 @@
-const mongoose = require("mongoose");
-require("dotenv").config();
+import { connect } from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
-const connectDB = () => mongoose.connect(`mongodb+srv://shubhamyadav97660:${process.env.MongoPassword}@cluster0.pqhsdnv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
+const connectDB = () => connect(`mongodb://shubhamyadav97660:${process.env.MongoPassword}@ac-aabheqf-shard-00-00.pqhsdnv.mongodb.net:27017,ac-aabheqf-shard-00-01.pqhsdnv.mongodb.net:27017,ac-aabheqf-shard-00-02.pqhsdnv.mongodb.net:27017/?ssl=true&replicaSet=atlas-115kce-shard-0&authSource=admin&appName=Cluster0`)
     .then(() => console.log("Connected To MongoDB"))
     .catch(err => console.log(err.message))
 
@@ -11,4 +12,4 @@ const connectDB = () => mongoose.connect(`mongodb+srv://shubhamyadav97660:${proc
 
 
 
-module.exports = connectDB;
+export default connectDB;
